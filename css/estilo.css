@@ -1,0 +1,151 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background: #d0dcfe;
+    color: #0345fc;
+}
+
+#contenedor{
+    width: 90%;
+    max-width: 1000px;
+    margin: 20px auto;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(4,auto);
+
+    grid-template-areas:
+        "header header header"
+        "nav    nav     nav"
+        "contenido contenido sidebar"
+        "widget-1 widget-2 sidebar"
+        "footer footer footer";
+}
+
+.bordes{
+    padding: 20px;
+    border-radius: 8px;
+}
+
+header{
+    grid-area: header;
+    background: #000000;
+    color: #fff;
+    padding: 10px;
+}
+
+nav{
+    grid-area: nav;
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+a{
+    padding: 20px;
+    background: greenyellow;
+}
+
+main{
+    grid-area: contenido;
+    background: #fff;
+    text-align: justify;
+
+}
+
+#sidebar{
+    background: #593dfa;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-area: sidebar;
+}
+
+#widget-1{
+    grid-area: widget-1;
+}
+
+#widget-2{
+    grid-area: widget-2;
+}
+
+.wid{
+    background-color: #4bcfff;
+    color: #fff;
+    height: 100px;
+    align-items: center;
+    justify-content: center;
+}
+
+footer{
+    background: #c94803;
+    color: #fff;
+    grid-area: footer;
+}
+
+
+form{
+    max-width: 400px;
+    margin: 50px auto 200px auto;
+    border: thin solid #e4e4e4;
+    padding: 20px;
+    box-shadow: 0 5px 5px rgba(0,0,0,0.2);
+    background: black;
+    color: #fff;
+    border-radius: 25px;
+}
+
+form label{
+    display: block;
+    margin-bottom: 10px;
+    padding-left: 5px;
+}
+
+form input{
+    display: block;
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    border: thin solid #e4e4e4;
+    margin-bottom: 30px;
+    border-radius: 15px;
+}
+
+form button{
+    background: #ffae00;
+    color: #fff;
+    border: none;
+    padding: 15px;
+    width: 100%;
+    font-size: 16px;
+    margin-bottom: 20px;
+    cursor:pointer;
+    border-radius: 5px;
+}
+
+form button:active{
+    background: #535353;
+}
+
+
+@media screen and (max-width: 768px){
+
+    #contenedor{
+        grid-template-areas:
+            "header header header"
+            "nav nav nav"
+            "contenido contenido contenido"
+            "sidebar sidebar sidebar"
+            "widget-1 widget-1 widget-2"
+            "footer footer footer";
+    }
+}
